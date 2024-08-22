@@ -39,7 +39,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>shark.byte</groupId>
+            <groupId>com.github.amnoah.sharkbyte-bossbar</groupId>
             <artifactId>core</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>

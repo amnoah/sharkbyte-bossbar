@@ -2,7 +2,7 @@
 
 # sharkbyte-bossbar
 
-This is a platform-independent system that allows boss bars to be created easily. It requires
+This is a PacketEvents addon that allows boss bars to be created easily. It requires
 [PacketEvents](https://github.com/retrooper/packetevents) to function, which can be downloaded as a plugin on their
 [Modrinth page](https://modrinth.com/plugin/packetevents).
 
