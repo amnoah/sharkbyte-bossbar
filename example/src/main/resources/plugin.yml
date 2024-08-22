@@ -1,0 +1,8 @@
+name: sb-bossbar-example
+version: 1.0.0
+author: am noah
+description: An example of sharkbyte-bossbar in work.
+api-version: 1.13
+main: sharkbyte.bossbar.example.BossBarExample
+depend:
+  - packetevents
