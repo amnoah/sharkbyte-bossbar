@@ -2,7 +2,7 @@
 
 # sharkbyte-bossbar
 
-This is a platform-independent system that allows scoreboards to be created easily. It requires
+This is a platform-independent system that allows boss bars to be created easily. It requires
 [PacketEvents](https://github.com/retrooper/packetevents) to function, which can be downloaded as a plugin on their
 [Modrinth page](https://modrinth.com/plugin/packetevents).
 
@@ -33,7 +33,7 @@ into every plugin.
 
 You can add sharkbyte-bossbar to your project using [JitPack](https://jitpack.io/#amnoah/sharkbyte-bossbar/).
 Select the dependency system you're using and copy the repository/dependency settings into your project. From there,
-just reload your dependencies and you should have sharkbyte-scoreboard accessible from your project.
+just reload your dependencies and you should have sharkbyte-bossbar accessible from your project.
 
 # support
 

@@ -83,6 +83,7 @@ public class LegacyBossBar implements BossBar {
     /**
      * Set the Boss Bar's health.
      * Intended to be (0.0, 1.0], funny stuff happens at 1.43+.
+     * You can overflow the bar and make it dead by putting in a large number like 99999999.
      */
     @Override
     public void setHealth(float health) {
