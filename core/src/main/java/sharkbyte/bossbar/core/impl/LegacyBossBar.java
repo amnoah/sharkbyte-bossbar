@@ -68,17 +68,25 @@ public class LegacyBossBar implements BossBar {
      * This feature was introduced in 1.9. Will do nothing in 1.8.
      */
     @Override
-    public void setColor(WrapperPlayServerBossBar.Color color) {
-        // Feature introduced in 1.9.
-    }
+    public void setColor(WrapperPlayServerBossBar.Color color) {}
 
     /**
      * This feature was introduced in 1.9. Will do nothing in 1.8.
      */
     @Override
-    public void setDivision(WrapperPlayServerBossBar.Division division) {
-        // Feature introduced in 1.9.
-    }
+    public void setCreateFog(boolean createFog) {}
+
+    /**
+     * This feature was introduced in 1.9. Will do nothing in 1.8.
+     */
+    @Override
+    public void setDarkenSky(boolean darkenSky) {}
+
+    /**
+     * This feature was introduced in 1.9. Will do nothing in 1.8.
+     */
+    @Override
+    public void setDivision(WrapperPlayServerBossBar.Division division) {}
 
     /**
      * Set the Boss Bar's health.
@@ -91,6 +99,12 @@ public class LegacyBossBar implements BossBar {
         this.health = health;
         changedMetadata = true;
     }
+
+    /**
+     * This feature was introduced in 1.9. Will do nothing in 1.8.
+     */
+    @Override
+    public void setPlayBossMusic(boolean playBossMusic) {}
 
     /**
      * Set the Boss Bar's text.
@@ -232,7 +246,6 @@ public class LegacyBossBar implements BossBar {
         ));
 
         user.flushPackets();
-        user.sendMessage("Switch Dimensions");
     }
 
     /**

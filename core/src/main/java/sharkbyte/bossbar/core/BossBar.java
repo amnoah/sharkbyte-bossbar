@@ -56,6 +56,18 @@ public interface BossBar {
     void setColor(WrapperPlayServerBossBar.Color color);
 
     /**
+     * Set whether the boss bar should create fog on the user's screen.
+     * Only works in 1.9+.
+     */
+    void setCreateFog(boolean createFog);
+
+    /**
+     * Set whether the boss bar should darken the sky on the user's screen.
+     * Only works in 1.9+.
+     */
+    void setDarkenSky(boolean darkenSky);
+
+    /**
      * Set the boss bar's division.
      * Only works in 1.9.
      */
@@ -67,6 +79,12 @@ public interface BossBar {
      * break the boss bar and have no effect on 1.9+.
      */
     void setHealth(float health);
+
+    /**
+     * Set whether the boss bar should play boss music for the user.
+     * Only works in 1.9+.
+     */
+    void setPlayBossMusic(boolean playBossMusic);
 
     /**
      * Set the boss bar's text.
