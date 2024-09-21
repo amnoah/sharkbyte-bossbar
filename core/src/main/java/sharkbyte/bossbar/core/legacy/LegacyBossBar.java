@@ -54,6 +54,7 @@ public class LegacyBossBar implements SBBossBar {
         this.user = user;
         this.text = text;
 
+        if (health <= 0) health = 99999999;
         this.health = health;
 
         created = false;
@@ -95,6 +96,7 @@ public class LegacyBossBar implements SBBossBar {
     @Override
     public void setHealth(float health) {
         if (this.health == health) return;
+        if (health <= 0) health = 99999999;
         this.health = health;
         changedMetadata = true;
     }
