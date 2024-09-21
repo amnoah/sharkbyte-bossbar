@@ -1,4 +1,4 @@
-package sharkbyte.bossbar.core.util;
+package sharkbyte.bossbar.core.legacy;
 
 /**
  * This isn't really safe... so maybe you should set an entity ID provider.

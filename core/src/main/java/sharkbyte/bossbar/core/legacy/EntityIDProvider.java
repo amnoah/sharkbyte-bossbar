@@ -1,4 +1,4 @@
-package sharkbyte.bossbar.core.util;
+package sharkbyte.bossbar.core.legacy;
 
 /**
  * This is a simple interface meant to generate viable entityIDs for the LegacyHandler. It is ONLY required if you're

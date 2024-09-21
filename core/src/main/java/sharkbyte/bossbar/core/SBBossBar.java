@@ -3,19 +3,19 @@ package sharkbyte.bossbar.core;
 import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.manager.server.ServerVersion;
 import com.github.retrooper.packetevents.protocol.player.User;
+import net.kyori.adventure.bossbar.BossBar;
 import org.jetbrains.annotations.Nullable;
-import sharkbyte.bossbar.core.impl.LegacyBossBar;
-import sharkbyte.bossbar.core.impl.ModernBossBar;
-import sharkbyte.bossbar.core.util.WrapperPlayServerBossBar;
+import sharkbyte.bossbar.core.legacy.LegacyBossBar;
+import sharkbyte.bossbar.core.modern.ModernBossBar;
 
 /**
  * This interface provides a version-independent way of managing Boss Bars despite being inherently version dependent.
  *
  * @Author: am noah
  * @Since: 1.0.0
- * @Updated: 1.0.0
+ * @Updated: 1.1.0
  */
-public interface BossBar {
+public interface SBBossBar {
 
     /*
      * Version-Independent Constructors.
@@ -24,7 +24,7 @@ public interface BossBar {
     /**
      * Initialize a boss bar with the given parameters.
      */
-    static BossBar createBossBar(User user) {
+    static SBBossBar createBossBar(User user) {
         if (PacketEvents.getAPI().getServerManager().getVersion().isNewerThanOrEquals(ServerVersion.V_1_9)) return new ModernBossBar(user);
         else return new LegacyBossBar(user);
     }
@@ -32,7 +32,7 @@ public interface BossBar {
     /**
      * Initialize a boss bar with the given parameters.
      */
-    static BossBar createBossBar(User user, String text) {
+    static SBBossBar createBossBar(User user, String text) {
       if (PacketEvents.getAPI().getServerManager().getVersion().isNewerThanOrEquals(ServerVersion.V_1_9)) return new ModernBossBar(user, text);
       else return new LegacyBossBar(user, text);
     }
@@ -40,8 +40,8 @@ public interface BossBar {
     /**
      * Initialize a boss bar with the given parameters.
      */
-    static BossBar createBossBar(User user, String text, float health, @Nullable WrapperPlayServerBossBar.Color color, @Nullable WrapperPlayServerBossBar.Division division) {
-      if (PacketEvents.getAPI().getServerManager().getVersion().isNewerThanOrEquals(ServerVersion.V_1_9)) return new ModernBossBar(user, text, health, color, division);
+    static SBBossBar createBossBar(User user, String text, float health, @Nullable BossBar.Color color, @Nullable BossBar.Overlay overlay) {
+      if (PacketEvents.getAPI().getServerManager().getVersion().isNewerThanOrEquals(ServerVersion.V_1_9)) return new ModernBossBar(user, text, health, color, overlay);
       else return new LegacyBossBar(user, text, health);
     }
 
@@ -53,7 +53,7 @@ public interface BossBar {
      * Set the boss bar's color.
      * Only works in 1.9+.
      */
-    void setColor(WrapperPlayServerBossBar.Color color);
+    void setColor(BossBar.Color color);
 
     /**
      * Set whether the boss bar should create fog on the user's screen.
@@ -71,7 +71,7 @@ public interface BossBar {
      * Set the boss bar's division.
      * Only works in 1.9.
      */
-    void setDivision(WrapperPlayServerBossBar.Division division);
+    void setDivision(BossBar.Overlay overlay);
 
     /**
      * Set the boss bar's health.

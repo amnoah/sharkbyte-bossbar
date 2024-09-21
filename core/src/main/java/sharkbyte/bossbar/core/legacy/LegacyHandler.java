@@ -1,4 +1,4 @@
-package sharkbyte.bossbar.core.util;
+package sharkbyte.bossbar.core.legacy;
 
 import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.event.SimplePacketListenerAbstract;
@@ -11,7 +11,6 @@ import com.github.retrooper.packetevents.protocol.world.Location;
 import com.github.retrooper.packetevents.util.Vector3d;
 import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientPlayerFlying;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerEntityTeleport;
-import sharkbyte.bossbar.core.impl.LegacyBossBar;
 
 import java.util.*;
 

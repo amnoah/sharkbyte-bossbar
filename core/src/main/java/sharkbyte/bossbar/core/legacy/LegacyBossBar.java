@@ -1,4 +1,4 @@
-package sharkbyte.bossbar.core.impl;
+package sharkbyte.bossbar.core.legacy;
 
 import com.github.retrooper.packetevents.protocol.entity.data.EntityData;
 import com.github.retrooper.packetevents.protocol.entity.data.EntityDataTypes;
@@ -9,9 +9,8 @@ import com.github.retrooper.packetevents.util.Vector3d;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerDestroyEntities;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerEntityMetadata;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerSpawnLivingEntity;
-import sharkbyte.bossbar.core.BossBar;
-import sharkbyte.bossbar.core.util.LegacyHandler;
-import sharkbyte.bossbar.core.util.WrapperPlayServerBossBar;
+import net.kyori.adventure.bossbar.BossBar;
+import sharkbyte.bossbar.core.SBBossBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +21,9 @@ import java.util.List;
  *
  * @Author: am noah
  * @Since: 1.0.0
- * @Updated: 1.0.0
+ * @Updated: 1.1.0
  */
-public class LegacyBossBar implements BossBar {
+public class LegacyBossBar implements SBBossBar {
 
     private final User user;
     private int entityID;
@@ -68,7 +67,7 @@ public class LegacyBossBar implements BossBar {
      * This feature was introduced in 1.9. Will do nothing in 1.8.
      */
     @Override
-    public void setColor(WrapperPlayServerBossBar.Color color) {}
+    public void setColor(BossBar.Color color) {}
 
     /**
      * This feature was introduced in 1.9. Will do nothing in 1.8.
@@ -86,7 +85,7 @@ public class LegacyBossBar implements BossBar {
      * This feature was introduced in 1.9. Will do nothing in 1.8.
      */
     @Override
-    public void setDivision(WrapperPlayServerBossBar.Division division) {}
+    public void setDivision(BossBar.Overlay division) {}
 
     /**
      * Set the Boss Bar's health.
