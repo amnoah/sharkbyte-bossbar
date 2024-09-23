@@ -5,9 +5,9 @@ import com.github.retrooper.packetevents.event.simple.PacketPlayReceiveEvent;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
 import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientChatMessage;
 import io.github.retrooper.packetevents.util.SpigotReflectionUtil;
-import sharkbyte.bossbar.core.BossBar;
-import sharkbyte.bossbar.core.util.LegacyHandler;
-import sharkbyte.bossbar.core.util.WrapperPlayServerBossBar;
+import net.kyori.adventure.bossbar.BossBar;
+import sharkbyte.bossbar.core.SBBossBar;
+import sharkbyte.bossbar.core.legacy.LegacyHandler;
 
 /**
  * This class shows basic usage of the BossBar.
@@ -22,14 +22,14 @@ public class PacketListener extends SimplePacketListenerAbstract {
         LegacyHandler.setEntityIDProvider(SpigotReflectionUtil::generateEntityId);
     }
 
-    private BossBar bossBar;
+    private SBBossBar bossBar;
 
     @Override
     public void onPacketPlayReceive(PacketPlayReceiveEvent event) {
         if (!event.getPacketType().equals(PacketType.Play.Client.CHAT_MESSAGE)) return;
 
         if (bossBar == null) {
-            bossBar = BossBar.createBossBar(event.getUser(), "This is a boss bar!", 1, null, null);
+            bossBar = SBBossBar.createBossBar(event.getUser(), "This is a boss bar!", 1, null, null);
         }
 
         WrapperPlayClientChatMessage message = new WrapperPlayClientChatMessage(event);
@@ -60,44 +60,44 @@ public class PacketListener extends SimplePacketListenerAbstract {
             case "color":
                 switch (elements[1].toLowerCase()) {
                     case "pink":
-                        bossBar.setColor(WrapperPlayServerBossBar.Color.PINK);
+                        bossBar.setColor(BossBar.Color.PINK);
                         break;
                     case "blue":
-                        bossBar.setColor(WrapperPlayServerBossBar.Color.BLUE);
+                        bossBar.setColor(BossBar.Color.BLUE);
                         break;
                     case "red":
-                        bossBar.setColor(WrapperPlayServerBossBar.Color.RED);
+                        bossBar.setColor(BossBar.Color.RED);
                         break;
                     case "green":
-                        bossBar.setColor(WrapperPlayServerBossBar.Color.GREEN);
+                        bossBar.setColor(BossBar.Color.GREEN);
                         break;
                     case "yellow":
-                        bossBar.setColor(WrapperPlayServerBossBar.Color.YELLOW);
+                        bossBar.setColor(BossBar.Color.YELLOW);
                         break;
                     case "purple":
-                        bossBar.setColor(WrapperPlayServerBossBar.Color.PURPLE);
+                        bossBar.setColor(BossBar.Color.PURPLE);
                         break;
                     case "white":
-                        bossBar.setColor(WrapperPlayServerBossBar.Color.WHITE);
+                        bossBar.setColor(BossBar.Color.WHITE);
                         break;
                 }
                 break;
             case "division":
                 switch (elements[1].toLowerCase()) {
                     case "0":
-                        bossBar.setDivision(WrapperPlayServerBossBar.Division.NONE);
+                        bossBar.setDivision(BossBar.Overlay.PROGRESS);
                         break;
                     case "6":
-                        bossBar.setDivision(WrapperPlayServerBossBar.Division.NOTCHES_6);
+                        bossBar.setDivision(BossBar.Overlay.NOTCHED_6);
                         break;
                     case "10":
-                        bossBar.setDivision(WrapperPlayServerBossBar.Division.NOTCHES_10);
+                        bossBar.setDivision(BossBar.Overlay.NOTCHED_10);
                         break;
                     case "12":
-                        bossBar.setDivision(WrapperPlayServerBossBar.Division.NOTCHES_12);
+                        bossBar.setDivision(BossBar.Overlay.NOTCHED_12);
                         break;
                     case "20":
-                        bossBar.setDivision(WrapperPlayServerBossBar.Division.NOTCHES_20);
+                        bossBar.setDivision(BossBar.Overlay.NOTCHED_20);
                         break;
                 }
         }
