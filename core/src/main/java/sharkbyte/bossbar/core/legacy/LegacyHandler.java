@@ -15,16 +15,17 @@ import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerEn
 import java.util.*;
 
 /**
- * This class represents and handles a boss bar for a user in 1.8.
- * It is incredibly scuffed currently with major issues surrounding entity culling.
+ * This class handles moving the fake entity that has the boss bar that is displayed for the legacy user.
+ * It will be culled and the text will disappear from the screen if it is largely obscured/too far away, so we must move
+ * the entity every time that the player moves.
  *
  * @Author: am noah
  * @Since: 1.0.0
- * @Updated: 1.0.0
+ * @Updated: 1.1.0
  */
 public class LegacyHandler extends SimplePacketListenerAbstract {
 
-    public static double ENTITY_DISTANCE = 15;
+    public static double ENTITY_DISTANCE = 30;
 
     private static boolean registeredListener = false;
     private static EntityIDProvider entityIDProvider;
@@ -67,7 +68,6 @@ public class LegacyHandler extends SimplePacketListenerAbstract {
             entity.addUser(user, bossBar);
             return entity.getId();
         }
-
 
         int nextID = entityIDProvider.getNextEntityID();
         FakeEntity newEntity = new FakeEntity(nextID);

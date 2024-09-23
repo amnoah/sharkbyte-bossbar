@@ -17,7 +17,8 @@ import java.util.List;
 
 /**
  * This class represents and handles a boss bar for a user in 1.8.
- * It is incredibly scuffed currently with major issues surrounding entity culling.
+ * It is incredibly scuffed currently with major issues surrounding entity culling - but I'm unaware of how to fix this.
+ * This is an issue that even Hypixel suffers from.
  *
  * @Author: am noah
  * @Since: 1.0.0
